@@ -1,12 +1,23 @@
 # Tl;DR argh I just want to activate my python env
 
 ```sh
-# Activate environment
-$ pyenv activate notebooks
-# Here's how I created it:
+# Here's how I created this environment:
 $ pyenv virtualenv 3.11.1 notebooks
 $ pyenv local notebooks
 $ pyenv which python
+```
+The environment will be activated if you add the following snippet to your `.zshrc`:
+
+## Add the following to `.zshrc`
+
+```sh
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+```sh
+# This is the command I would have to run manually otherwise
+$ pyenv activate notebooks
 ```
 
 # Pyenv-virtualenv setup
@@ -51,13 +62,4 @@ $ pyenv local 3.11.1
 ```sh
 # Sets the PYENV_VERSION environment variable
 $ pyenv shell 3.11.1
-```
-
-## Add the following to `.zshrc`
-
-The `pyenv activate notebooks` command won't work otherwise.
-
-```sh
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 ```
